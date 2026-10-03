@@ -607,7 +607,7 @@ Attributes
        #
        message-format: |
 
-         [%{elapsed}][%{key}][%{element}] %{action} %{message}
+         [%{wallclock}][%{key}][%{element}] %{action} %{message}
 
   Variable names which can be used in the element format consist of:
 

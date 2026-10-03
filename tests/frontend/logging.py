@@ -184,11 +184,11 @@ def test_log_line_element_names(cli, datafiles):
 
     # In the master log, we're looking for lines like this:
     #
-    # [--:--:--][10dc28c5][   build:logtest.bst                   ] STATUS  Staging bar.bst/40ff1c5a
-    # [--:--:--][10dc28c5][   build:logtest.bst                   ] STATUS  Staging foo.bst/e5ab75a1
+    # [12:34:56][10dc28c5][   build:logtest.bst                   ] STATUS  Staging bar.bst/40ff1c5a
+    # [12:34:56][10dc28c5][   build:logtest.bst                   ] STATUS  Staging foo.bst/e5ab75a1
 
     # Capture (log key, element name, staged element name, staged element key)
-    pattern = r"\[--:--:--\]\[(\S*)\]\[\s*build:(\S*)\s*] STATUS  Staging\s*(\S*)/(\S*)"
+    pattern = r"\[\d\d:\d\d:\d\d\]\[(\S*)\]\[\s*build:(\S*)\s*] STATUS  Staging\s*(\S*)/(\S*)"
     lines = re.findall(pattern, master_log, re.MULTILINE)
 
     # We staged 2 elements
